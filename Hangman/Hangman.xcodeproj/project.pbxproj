@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		006456961DC54F3B0078DCA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006456951DC54F3B0078DCA5 /* Main.storyboard */; };
 		EC93104C1C891F2C00BE736C /* hangman1.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC9310451C891F2C00BE736C /* hangman1.gif */; };
 		EC93104D1C891F2C00BE736C /* hangman2.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC9310461C891F2C00BE736C /* hangman2.gif */; };
 		EC93104E1C891F2C00BE736C /* hangman3.gif in Resources */ = {isa = PBXBuildFile; fileRef = EC9310471C891F2C00BE736C /* hangman3.gif */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		006456951DC54F3B0078DCA5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EC9310451C891F2C00BE736C /* hangman1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = hangman1.gif; path = "basic-hangman-img/hangman1.gif"; sourceTree = "<group>"; };
 		EC9310461C891F2C00BE736C /* hangman2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = hangman2.gif; path = "basic-hangman-img/hangman2.gif"; sourceTree = "<group>"; };
 		EC9310471C891F2C00BE736C /* hangman3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = hangman3.gif; path = "basic-hangman-img/hangman3.gif"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				ECC22F421C89177600749E58 /* AppDelegate.swift */,
 				ECC22F491C89177600749E58 /* Assets.xcassets */,
 				ECC22F4B1C89177600749E58 /* LaunchScreen.storyboard */,
+				006456951DC54F3B0078DCA5 /* Main.storyboard */,
 				ECC22F4E1C89177600749E58 /* Info.plist */,
 			);
 			path = Hangman;
@@ -297,6 +300,7 @@
 				ECC22F7C1C891A6700749E58 /* phrases.plist in Resources */,
 				EC93104E1C891F2C00BE736C /* hangman3.gif in Resources */,
 				ECC22F4D1C89177600749E58 /* LaunchScreen.storyboard in Resources */,
+				006456961DC54F3B0078DCA5 /* Main.storyboard in Resources */,
 				EC93104D1C891F2C00BE736C /* hangman2.gif in Resources */,
 				EC9310511C891F2C00BE736C /* hangman6.gif in Resources */,
 				ECC22F4A1C89177600749E58 /* Assets.xcassets in Resources */,
