@@ -76,14 +76,16 @@ class GameViewController: UIViewController {
         print(phrase)
         updateGuess()
         drawHangman()
+        checkGameStatus()
     }
 
-    
-    
     func updateGuess() {
         let gl = guess.text?.characters.first
         let guessedLetter = "\(gl!)".uppercased()
-        if phrase.contains(guessedLetter) {
+        if (incorrectGuesses.text?.contains(guessedLetter))! {
+            print("the user already guessed that letter")
+        }
+        else if phrase.contains(guessedLetter) {
             var displayStr = ""
             
             for (index, char) in (puzzleString.text?.characters.enumerated())! {
@@ -103,7 +105,6 @@ class GameViewController: UIViewController {
             newNumIncorrect! += 1
             numIncorrectGuesses.text = "\(newNumIncorrect!)"
         }
-        checkGameStatus()
     }
     
     func checkGameStatus() {
@@ -112,7 +113,13 @@ class GameViewController: UIViewController {
             let alertController = UIAlertController(title: "You won!", message:
                 "Want to play again?", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default,handler: resetGame))
-            alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default,handler: backToHome))
+            alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: backToHome))
+            self.present(alertController, animated: true, completion: nil)
+        } else if Int(numIncorrectGuesses.text!) == 6 {
+            let alertController = UIAlertController(title: "You lost!", message:
+                "Want to play again?", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default,handler: resetGame))
+            alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: backToHome))
             self.present(alertController, animated: true, completion: nil)
         }
     }
@@ -123,8 +130,9 @@ class GameViewController: UIViewController {
     }
     
     func backToHome(alert: UIAlertAction!) {
-        let mapViewControllerObj = self.storyboard?.instantiateViewController(withIdentifier: "HomeController")
-        self.navigationController?.present(mapViewControllerObj!, animated: true, completion: nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Home")
+        self.present(nextViewController, animated:true, completion:nil)
     }
     
     func drawHangman() {
